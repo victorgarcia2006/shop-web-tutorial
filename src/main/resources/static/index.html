@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Acceso</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Acceso</h2>
+
+        <!-- Mensaje de error (oculto por defecto) -->
+        <div id="mensaje-error" class="mensaje-error oculto"></div>
+
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Usuario" autocomplete="off"/>
+        </div>
+
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Clave"/>
+        </div>
+
+        <div class="form-group">
+            <button id="btn-ingresar" onclick="login()">Ingresar</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Categorías</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <span class="titulo">Shop</span>
+    <span class="usuario" id="nombre-usuario"></span>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="productos.html">Productos</a>
+        <a href="categorias.html" class="activo">
+            Categorías <span class="arrow">▶</span>
+        </a>
+        <a href="#" onclick="logout()">Salir</a>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="contenido">
+        <div class="tabla-header">
+            <h3>Listado de Categorías</h3>
+            <button class="btn-nuevo" onclick="abrirModalNuevo()">Nuevo</button>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="tabla-categorias">
+            <!-- Filas generadas con JS -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- ===== MODAL NUEVO / EDITAR CATEGORÍA ===== -->
+<div id="modal-categoria" class="modal-overlay oculto">
+    <div class="modal">
+        <h3 id="modal-titulo">Nueva categoría</h3>
+
+        <div id="modal-error" class="mensaje-error oculto"></div>
+
+        <div style="margin-bottom: 20px;">
+            <label>Nombre:</label>
+            <input type="text" id="cat-nombre"
+                   placeholder="Nombre de la categoría"/>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn-aceptar" onclick="guardarCategoria()">Aceptar</button>
+            <button class="btn-cancelar" onclick="cerrarModalCategoria()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MODAL ELIMINAR CATEGORÍA ===== -->
+<div id="modal-eliminar" class="modal-overlay oculto">
+    <div class="modal">
+        <h3>Eliminar categoría</h3>
+
+        <p style="margin-bottom: 16px; font-size: 14px; color: #555;">
+            Confirme que desea eliminar ingresando el ID de la categoría
+        </p>
+
+        <div style="margin-bottom: 20px;">
+            <input type="number" id="eliminar-id-confirmacion"
+                   placeholder="ID de la categoría"/>
+        </div>
+
+        <div id="eliminar-error" class="mensaje-error oculto"></div>
+
+        <div class="modal-footer">
+            <button class="btn-aceptar" onclick="confirmarEliminar()">Aceptar</button>
+            <button class="btn-cancelar" onclick="cerrarModalEliminar()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/categorias.js"></script>
+</body>
+</html>

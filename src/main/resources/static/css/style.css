@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body {
+    background-color: #f0f2f5;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* ===== LOGIN ===== */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-group button:hover {
+    background-color: #357abd;
+}
+
+.form-group button:disabled {
+    background-color: #a0c4f1;
+    cursor: not-allowed;
+}
+
+/* ===== MENSAJES ===== */
+.mensaje-error {
+    background-color: #ffe0e0;
+    color: #c0392b;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    border-left: 4px solid #c0392b;
+}
+
+.mensaje-exito {
+    background-color: #e0f7e9;
+    color: #27ae60;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    border-left: 4px solid #27ae60;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .titulo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar .usuario {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.layout {
+    display: flex;
+    min-height: calc(100vh - 50px);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 180px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding-top: 16px;
+}
+
+.sidebar a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #f5f5f5;
+}
+
+.sidebar a.activo {
+    background-color: #e8f0fe;
+    color: #4a90e2;
+    font-weight: bold;
+}
+
+.sidebar a .arrow {
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+    flex: 1;
+    padding: 24px;
+    background-color: #f0f2f5;
+}
+
+/* ===== DASHBOARD CARDS ===== */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 160px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.card .numero {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card .etiqueta {
+    font-size: 13px;
+    color: #888;
+}
+
+.card .icono {
+    font-size: 28px;
+}
+
+/* ===== TABLA ===== */
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tabla-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    font-weight: 600;
+    color: #555;
+}
+
+td {
+    color: #333;
+}
+
+/* ===== BOTONES ===== */
+.btn-nuevo {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-nuevo:hover {
+    background-color: #219150;
+}
+
+.btn-editar {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-aceptar {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-cancelar {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 8px;
+    padding: 28px;
+    width: 480px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal h3 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.modal-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.modal label {
+    font-size: 13px;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal input,
+.modal select,
+.modal textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+    border-color: #4a90e2;
+}
+
+.modal input.error,
+.modal select.error,
+.modal textarea.error {
+    border-color: #e74c3c;
+}
+
+.modal textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}

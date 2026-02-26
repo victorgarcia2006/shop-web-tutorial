@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Productos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <span class="titulo">Shop</span>
+    <span class="usuario" id="nombre-usuario"></span>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="productos.html" class="activo">
+            Productos <span class="arrow">▶</span>
+        </a>
+        <a href="categorias.html">Categorías</a>
+        <a href="#" onclick="logout()">Salir</a>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="contenido">
+        <div class="tabla-header">
+            <h3>Listado de Productos</h3>
+            <button class="btn-nuevo" onclick="abrirModalNuevo()">Nuevo</button>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Descuento</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="tabla-productos">
+            <!-- Filas generadas con JS -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- ===== MODAL NUEVO / EDITAR PRODUCTO ===== -->
+<div id="modal-producto" class="modal-overlay oculto">
+    <div class="modal">
+        <h3 id="modal-titulo">Nuevo producto</h3>
+
+        <!-- Mensaje de error dentro del modal -->
+        <div id="modal-error" class="mensaje-error oculto"></div>
+
+        <div class="modal-grid">
+            <div>
+                <label>Nombre:</label>
+                <input type="text" id="prod-nombre"/>
+            </div>
+            <div>
+                <label>Precio:</label>
+                <input type="number" id="prod-precio" min="0" step="0.01"/>
+            </div>
+            <div>
+                <label>Stock:</label>
+                <input type="number" id="prod-stock" min="0"/>
+            </div>
+            <div>
+                <label>Descuento:</label>
+                <input type="number" id="prod-descuento" min="0"/>
+            </div>
+        </div>
+
+        <div class="modal-grid-2">
+            <div>
+                <label>Categoría:</label>
+                <select id="prod-categoria">
+                    <!-- Opciones cargadas con JS -->
+                </select>
+            </div>
+            <div>
+                <label>Observaciones:</label>
+                <textarea id="prod-observaciones"></textarea>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn-aceptar" onclick="guardarProducto()">Aceptar</button>
+            <button class="btn-cancelar" onclick="cerrarModalProducto()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MODAL ELIMINAR PRODUCTO ===== -->
+<div id="modal-eliminar" class="modal-overlay oculto">
+    <div class="modal">
+        <h3>Eliminar producto</h3>
+
+        <p style="margin-bottom: 16px; font-size: 14px; color: #555;">
+            Confirme que desea eliminar ingresando el ID del producto
+        </p>
+
+        <div style="margin-bottom: 20px;">
+            <input type="number" id="eliminar-id-confirmacion"
+                   placeholder="ID del producto"/>
+        </div>
+
+        <div id="eliminar-error" class="mensaje-error oculto"></div>
+
+        <div class="modal-footer">
+            <button class="btn-aceptar" onclick="confirmarEliminar()">Aceptar</button>
+            <button class="btn-cancelar" onclick="cerrarModalEliminar()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/productos.js"></script>
+</body>
+</html>

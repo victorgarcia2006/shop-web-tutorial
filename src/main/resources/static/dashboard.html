@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <span class="titulo">Shop</span>
+    <span class="usuario" id="nombre-usuario"></span>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="dashboard.html" class="activo">
+            Dashboard <span class="arrow">▶</span>
+        </a>
+        <a href="productos.html">Productos</a>
+        <a href="categorias.html">Categorías</a>
+        <a href="#" onclick="logout()">Salir</a>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="contenido">
+        <div class="cards" id="cards-estadisticas">
+            <!-- Las cards se generan con JS -->
+        </div>
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
